@@ -546,8 +546,138 @@
             background-color: rgba(255, 255, 255, 0.053);
         }
 
+        /* ----------------------------- */
+        /* Mobile optimizations ONLY     */
+        /* ----------------------------- */
+        @media (max-width: 768px) {
+            header {
+                height: 64px;
+                padding: 10px 4%;
+            }
+
+            /* Keep the mobile nav single line */
+            nav {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 0;
+                white-space: nowrap;
+                overflow: hidden;
+            }
 
 
+            nav a {
+                margin-left: 14px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+
+            .nav-dot {
+                display: none;
+            }
+
+            section {
+                padding: 80px 4% 40px 4%;
+            }
+
+            /* Prevent overlaps caused by negative margin-top */
+            #education,
+            #skills,
+            #projects,
+            #contact {
+                margin-top: 0;
+            }
+
+            .hero-container {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .hero-image-wrapper {
+                flex: 0 0 auto;
+                width: 220px;
+                height: 220px;
+                align-self: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+                gap: 12px;
+            }
+
+            .cta-buttons .btn {
+                text-align: center;
+                width: 100%;
+                padding: 12px 18px;
+            }
+
+            .grid-layout {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .skills-cols {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .skill-group {
+                padding: 1.5rem;
+            }
+
+            /* Touch devices: hide custom cursor */
+            body {
+                cursor: auto;
+            }
+
+            #cur,
+            #cur-ring {
+                display: none;
+            }
+
+            body::before {
+                background-size: 380px 380px, 260px 260px, 200px 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                margin-left: 10px;
+                font-size: 11px;
+            }
+
+            .hero-image-wrapper {
+                width: 200px;
+                height: 200px;
+            }
+
+            section {
+                padding-left: 3.5%;
+                padding-right: 3.5%;
+            }
+        }
 
         #education {
             margin-top: -230px;
@@ -564,6 +694,7 @@
         #contact {
             margin-top: -150px;
         }
+
 
         .bottom-icons {
             font-size: 20px;
